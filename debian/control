@@ -1,0 +1,23 @@
+Source: qtorganizer5-mkcal
+Section: utils
+Priority: optional
+Maintainer: UBports developers <devs@ubports.com>
+Build-Depends: cmake (>= 3.16),
+               debhelper-compat (= 12),
+               qtbase5-dev,
+               qtpim5-dev (>= 5.0~git20171109~0bd985b),
+               libkf5calendarcore-dev,
+               libmkcal-qt5-dev
+Standards-Version: 3.9.4
+Homepage: https://gitlab.com/ubports/core/qtorganizer5-mkcal
+Vcs-Git: https://gitlab.com/ubports/core/qtorganizer5-mkcal.git
+Vcs-Browser: https://gitlab.com/ubports/core/qtorganizer5-mkcal
+
+Package: qtorganizer5-mkcal
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: QtOrganizer engine for mkCal calendar
+ A QOrganizerEngine implementation using mkCal.
