@@ -156,6 +156,8 @@ static void updateIncidence(KCalendarCore::Incidence::Ptr incidence,
             incidence->addComment(comment);
         }
     }
+    incidence->clearAlarms();
+  
     for (const QOrganizerItemDetail &detail : item.details()) {
         switch (detail.type()) {
         case QOrganizerItemDetail::TypeClassification:
