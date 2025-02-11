@@ -10,6 +10,7 @@ BuildRequires: pkgconfig(Qt5Organizer)
 BuildRequires: pkgconfig(libmkcal-qt5)
 BuildRequires: pkgconfig(KF5CalendarCore)
 BuildRequires: cmake
+BuildRequires: extra-cmake-modules
 
 %description
 Provides a plugin to store QOrganizer items on disk
