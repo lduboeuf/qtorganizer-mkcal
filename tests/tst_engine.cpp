@@ -582,6 +582,14 @@ void tst_engine::testItemAudibleReminder()
     QCOMPARE(alarm->snoozeTime().asSeconds(), detail.repetitionDelay());
     QCOMPARE(alarm->repeatCount(), detail.repetitionCount());
 
+    // Verify that updates don't change the alarm
+    item.setDisplayLabel(QStringLiteral("Test item audible reminder updated"));
+    QVERIFY(mManager->saveItem(&item));
+    QTRY_COMPARE(dataChanged.count(), 1);
+    incidence = observer.incidence(item.id());
+    QVERIFY(incidence);
+    QCOMPARE(incidence->alarms().count(), 1);
+
     QOrganizerManager manager(QString::fromLatin1("mkcal"),
                               mManager->managerParameters());
     QCOMPARE(manager.error(), QOrganizerManager::NoError);
